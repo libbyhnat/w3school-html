@@ -1,0 +1,691 @@
+/**w3school, HTMLDOG AND ME*****/
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+
+
+body {
+  margin:0;
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #b3e0ff;
+}
+
+.button {
+  padding: .5rem 1rem;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  font-size: .9rem;
+  /*****Treat it like block element, give more space( not an inline E)*/
+  /******in-line, only as big as the text, Block= all the away across*/
+  display: inline-block;
+    /***How square the corners on the button are ***/
+  border-radius: 3px;
+  /***Fancey!!!****/
+  transition: background-color 200ms ease;
+}
+.button:hover {
+  background-color: rgba(5,51,51,0.8);
+}
+
+/***00  To get fancey on the hover adjust the button*****/
+            /***The ghost Button will have all the same properties as all the others +*****/
+    .ghost-button {
+      background: transparent;
+      color:  #333;
+      border: 3px solid #333;
+      text-transform: uppercase;
+      font-weight: 700;
+      transition: background-color 200ms ease, color 200ms ease;
+      padding:1rem;
+      /*justify-content: center;*/
+    }
+
+
+    .ghost-button:hover {
+      background: #333;
+      color: white;
+    }
+
+/**END OVER ALL START************************************************************/
+
+/***The OVER ALL GRID LAYOUT  (Grid Super Structure)An opption, this is Set up on EACH ELEMNT****/
+/*.grid-wrapp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+}*/
+
+/***** Navigation/Header*******FLEX BOX SET UP**********************************/
+.masthead {
+  background: #333;
+  color: #fff;
+  padding: .5rem 1rem;
+}
+.masthead-inner {
+          /*** Flex Box Properties****/
+  /*display: flex;*/
+  /*TO WRAP TEXT ****flex-wrap: wrap;*** Back To- margin-left: 1rem, EX.( more later)***/
+  /*flex-wrap: wrap;
+  justify-content:space-between;*/
+  /*align-items: center;*/
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .masthead-inner {
+            /*** Flex Box Properties****/
+    display: flex;
+    /*TO WRAP TEXT ****flex-wrap: wrap;*** Back To- margin-left: 1rem, EX.( more later)***/
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+  }
+}
+
+.site-title h1 {
+  margin: 0;
+  /*padding-bottom: 1rem;*/
+  align-items: center;
+  text-align: center;
+}
+
+            .menu {
+              list-style: none;
+              padding:0;
+              margin: 0;
+                            /***This is a Flex inside the larger flex ( above)**/
+              display: flex;
+              justify-content: center;
+              padding: 1rem 0;
+              }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  li {
+    margin-left: 1rem;
+    /**00-> responsive, to move menu below, GO TO- masthead-inner, + flex-wrap:wrap**/
+  }
+
+  &:hover {
+    color: gray;
+  }
+
+  #header  {
+    padding-bottom: 10px;
+    color: #66ffcc;
+    position: relative;
+    top: 0px;
+    left: 30px;
+  }
+
+  /***** HERO Section **********************************************************/
+  .hero {
+    /*City Image*/
+    background-image: url(https://unsplash.it/2000/1500?imag);
+    /*background: url(picture021c.jpg);*/
+    background-position: center;
+        /*****COOL **Size: cover; alows for the image to get bigger and smaller*:********/
+    background-size: cover;
+    background-repeat: no-repeat;
+        /**Below creats the HEIGHT of the section and alows Flex text to be adjusted within it.*/
+    height: 50vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  /***To Set the GRADIENT on the Background IMAGE Overlay****/
+  .hero {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.it/2000/1500?image=1067);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://unsplash.it/2000/1500?image=1067);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  }
+
+  /***This is the Flex Box hero-inner section style, it is placing the text**/
+  .hero-inner {
+    max-width: 80vw;
+    margin: auto;
+    padding-left: 2rem;
+  }
+
+  .hero-inner h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #fff;
+    line-height: 1.2;
+
+  }
+  /*  the h2 Line Above -*/
+  h2 {
+    text-decoration: none;
+
+  }
+
+  @media (min-width: 600px) {
+    .hero-inner{
+      max-width: 50vw;
+      /**Must declare the margin:0; b/c above it is set to auto, Override*****/
+      margin: 0;
+    }
+    h2 {
+      text-align: left;
+    }
+  }
+
+
+/**BACKGROUND IMAGE for the glass background**/
+/*div h1 {
+  background-color: lightblue;
+  background: url(picture021.jpg);
+  padding: 50px;
+  color: black;
+}*/
+
+
+/***** END HERO Section **********************/
+
+
+/***** BASE Stlye FEATURES 3-up- image and Text" **************************************/
+/** FLRX BOX OUTTER -set the overall look for the whole area*/
+
+  .features{
+    padding: 2rem;
+  }
+
+    @media (min-width: 500px) {
+      .features {
+        padding: 4rem;
+      }
+
+    }
+    /**FLEX BOX INNER -Across -html set it up/down  Flex box makes it ACROSS**/
+
+          /*display: flex;********************/
+    /***Upper- if you take the Flex off this will stack, Felx on X axes *****/
+    /*****Below Controls the Maximun the inside can be in Flex Box*******/
+          /*max-width: 800px;*****************/
+    /*******Keep the image and taxt centered**********/
+
+
+
+        @media (min-width: 500px) {
+          .features-inner {
+            display: flex;
+            max-width: 800px;
+            margin: auto;
+          }
+          .features-group {
+            padding-bottom: 2rem;
+          }
+
+        }
+
+        @media (min-width: 500px) {
+          .features-group {
+            flex: 0 1 30vw;
+            padding-bottom: 0;
+          }
+
+          &:nth-child(2) {
+            margin: 0 2rem;
+          }
+
+        }
+
+            .features-group{
+              flex: 0 2 30vw;
+                }
+  /*****!!!!! 7:00 min in REVISIT THIS!!!!!!!**/
+
+  /******9:30 min in- psudo class and Nth child!!!!*  The nth child alows you to target it , No need to name it in HTML***/
+              /*.features-group:nth-child(2){
+                margin: 0 2rem;
+                }*/
+
+    /** the Image should take 100% of the  alotted space*/
+                .features-image img {
+                  width:100%;
+                  padding: 1rem;
+                  }
+button, .h {
+  background: purple;
+  color: yellow;
+  padding: .5rem;
+  margin: 1rem;
+}
+/******END "3-up Features- image and Text"**************************************/
+
+/**Next Section Call Out**************"Resonsive out fo the box" No @media()******************************************/
+  .callout {
+    background: #eee;
+    background: linear-gradient(rgba(0,0,0, 0.5),rgba(0,0,0, 0.5)), url(picture021.jpg);
+  /***BACKGROUND- use Only  Background ONLY if you are going to put layers on it.  Whatever you put first will be on top. **/
+  /**Background: linear-gradient (alows you to set the opasity), RGBa (a= alfa channel)*******/
+/****liner-gradient needs a (rgba(Starting color),rgba(Ending color)) *****/
+    Padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+      .callout-inner {
+        text-align: center;
+      }
+        /****** Below- the htlm of h3 and then make bigger with font size *****/
+      h3 {
+        color: #eee;
+        font-size: 2rem;
+      }
+
+/*END Call Out******************************************************************/
+
+
+/******* Blog *****************************************************************/
+#blog{
+  padding: 5rem 0;
+}
+
+@media (min-width: 700px) {
+  #blog{
+    padding: 5rem 0;
+  }
+
+}
+
+
+.blog-inner {
+      /*Keeps it CENTER Inner, max and margin both, **********/
+  max-width: 800px;
+  margin: auto;
+    /*No Butting up to the side*/
+  padding: 0 1rem;
+}
+
+.blog-image img {
+  /********This alow your img to be REPONIVE, that cool growing effect*/
+    /******Must be in the img tage, not the div*/
+    width: 100%;
+}
+
+
+
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  /*grid-column-gap: 30px;*/
+  grid-row-gap: 3rem;
+}
+
+@media (min-width: 700px) {
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      grid-template-rows: auto;
+      grid-column-gap: 30px;
+      grid-row-gap: 3rem;
+    }
+
+}
+
+
+
+
+.blog-summary {
+  margin-top: 0;
+}
+
+.blog-cta {
+  margin: 2rem 0 0;
+  text-align: center;
+}
+
+.blog-text {
+  margin-bottom: 2rem;
+}
+
+
+
+@media (min-widht: 700px) {
+  .blog-cta {
+    margin: 3rem 0 0;
+  }
+
+}
+.blog-cta a {
+  font-size: 0.8rem;
+}
+/*******END  Blog ********/
+
+/*******TABLES  *****  ME ME ME ME ME ME  - TABLES ***********************/
+/** FLRX BOX OUTTER -set the overall look for the whole area*/
+  .ftable{
+    padding: 3rem;
+    margin: 2rem;
+  }
+
+  .ftable-group {
+    margin-top: 2rem;
+  }
+
+  /*.ftable-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+  }*/
+
+  @media (min-width: 830px) {
+    .ftable-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+    }
+
+  }
+
+  @media (max-with: 500px) {
+    .ftable-inner {
+      /*display: flex;*/
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .ftable-group {
+      padding: 20px;
+    }
+
+  }
+/**inner Flex Box Original ******/
+  /*.ftable-inner {
+    display: flex;
+    max-width: 600px;
+    margin: auto;
+
+  }*/
+  /*******Position the  tables width wise (on the X)***/
+  /*.features-group {
+    flex: 0 1 30vw;
+  }*/
+
+  /*.features-group:nth-child(2){
+    margin: 0 0rem;
+
+  }*/
+
+  /*.features-group:nth-child(2){
+    margin: 0 2rem;*/
+
+/**** work form w3Schoo that I did***/
+/* #header  {
+  padding-bottom: 10px;
+  color: #66ffcc;
+  position: relative;
+  top: 0px;
+  left: 30px;
+} */
+/*  the h2 Line Above*/
+h2 {
+  text-decoration: none;
+  margin: 1rem;
+
+}
+
+
+ span {
+  color: purple;
+}
+
+table, th, td {
+    border: 1px solid black;
+    background: white;
+}
+
+table {
+  width: 100%;
+
+}
+
+th, td {
+  padding: 15px;
+  text-align:center;
+}
+
+caption{
+  color: darkblue;
+}
+
+
+/****FORMS********* Section Number 1*****************************************************/
+#number1 {
+      /*position: absolute;*/
+        /*position: relative;*/
+      left: 0;
+      /*width: 20%;*/
+      padding: 2em;
+      border: 3px solid black;
+      background: #ccf;
+      margin: 1em;
+}
+
+
+      /*******Forms-inner******/
+      .forms-inner {
+        max-width:100%;
+        margin: auto;
+        padding: 0 1rem;
+      }
+
+
+  /*FORMS GRID COLUMN*****************************************************************/
+
+  /*One Column**********/
+    /*grid-template-columns: 1fr;*/
+      .forms-grid{
+        display: grid;
+        grid-template-columns:repeat(1, 1fr);
+        grid-auto-rows: auto;
+        grid-gap: 1rem
+      }
+  /*TWO Columns*/
+      @media (min-width:500px) {
+          .forms-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            grid-gap: 1rem;
+            justify-items:center;
+            width: 100%;
+            margin: auto;
+          }
+      }
+ /*THREE Columns*/
+      @media (min-width:750px) {
+        .forms-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: auto;
+          grid-gap: 1rem;
+          justify-items:center;
+          width: 100%;
+          margin: auto;
+        }
+
+      }
+
+   /*FIVE Columns*/
+      @media (min-width:1000px) {
+        .forms-grid{
+          display: grid;
+          /*grid-template-columns: 1fr;*/
+          grid-template-columns:repeat(5, 1fr);
+          grid-auto-rows: auto;
+          grid-gap: 1rem
+          justify-items:center;
+          /*width: 100%;
+          margin: auto;*/
+        }
+
+      }
+
+/*END  FORMS*******************************************************************/
+
+/***LIST COLUMN******Number3 Grid**********************************************/
+
+ul {
+  list-style-type: circle;
+}
+
+ol {
+  list-style-type:upper-roman;
+}
+#number3 {
+
+  right: 0;
+  Padding: 2em;
+  border: 3px solid black;
+  background: #ccf;
+  margin: 1em;
+}
+
+@media (min-width: 400px) {
+  .number3-grid{
+    justify-content: center;
+  }
+}
+
+  @media (min-width: 500px) {
+      .number3-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 1rem;
+        justify-content: center;
+      /***************Styles number3*/
+      }
+    }
+
+/**END **************************************************************************/
+/******* Footer*Change the *Grid Footer  at diffentent break points****************************************************/
+
+
+    /********This styles the Whole Footer**********/
+#footer {
+  background: #333;
+  color: white;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*step 1*/
+@media (min-width: 400px) {
+  #footer {
+    display: block;
+    /*text-align: left;
+    justify-content: center;
+    align-items: center;*/
+    text-align: left;
+  }
+
+}
+
+/*step  2*/
+/**********Apply Footer Grid*******************/
+@media (min-width: 400px) {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 1rem;
+      justify-items:center;
+      width: 100%;
+      margin: auto;
+    }
+}
+
+
+
+
+/* step 3*/
+@media (768px) {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: auto;
+      grid-gap: 1rem;
+      justify-items: center;
+      max-width: 100%;
+      margin: auto;
+    }
+}
+
+/* step 4*Original grid set up*********/
+
+@media (min-width: 1000px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    justify-items:center;
+    width: 1000px;
+    margin: auto;
+
+  }
+
+}
+
+/* step 5* Footrt Group*******/
+
+@media (min-width: 1170px) {
+  .footer-group {
+    /*text-align: center;*/
+    width: 200px;
+  }
+}
+
+
+.footer-heading h4 {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+    li {
+      padding: .5rem 0;
+      }
+
+a {
+  color: white;
+  transition: color 200ms ease;
+}
+/*???????? 11:02/ hover not working*/
+/*a :hover {
+  color:rgba( white, 0.8);
+}*/
+
+
+.footer-links ul li a:hover {
+  color: rgba(255, 255, 255, 0.4);
+}
